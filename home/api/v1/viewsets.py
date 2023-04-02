@@ -1,3 +1,7 @@
+from rest_framework import viewsets
+from home.models import Rojo
+from .serializers import RojoSerializer
+from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
 from rest_framework.authtoken.models import Token
@@ -28,3 +32,8 @@ class LoginViewSet(ViewSet):
         token, created = Token.objects.get_or_create(user=user)
         user_serializer = UserSerializer(user)
         return Response({"token": token.key, "user": user_serializer.data})
+
+class RojoViewSet(viewsets.ModelViewSet):
+    serializer_class = RojoSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = Rojo.objects.all()
