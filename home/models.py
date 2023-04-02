@@ -6,3 +6,6 @@ class Rojo(models.Model):
 class NewMo(models.Model):
     'Generated Model'
     value = models.BigIntegerField()
+class NewMo2(models.Model):
+    'Generated Model'
+    azul = models.BigIntegerField()
