@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from home.models import NewMo,NewMo2,Rojo
-from .serializers import NewMoSerializer,NewMo2Serializer,RojoSerializer
+from home.models import Chia,NewMo,NewMo2,Rojo
+from .serializers import ChiaSerializer,NewMoSerializer,NewMo2Serializer,RojoSerializer
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -47,3 +47,8 @@ class NewMo2ViewSet(viewsets.ModelViewSet):
     serializer_class = NewMo2Serializer
     authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
     queryset = NewMo2.objects.all()
+
+class ChiaViewSet(viewsets.ModelViewSet):
+    serializer_class = ChiaSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = Chia.objects.all()

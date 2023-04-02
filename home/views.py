@@ -1,4 +1,4 @@
-from .models import Rojo
+from .models import NewMo2, NewMo, Rojo
 from django.views.generic import CreateView, UpdateView, DetailView, ListView
 from django.shortcuts import render
 

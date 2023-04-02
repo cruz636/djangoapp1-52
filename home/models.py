@@ -9,3 +9,6 @@ class NewMo(models.Model):
 class NewMo2(models.Model):
     'Generated Model'
     azul = models.BigIntegerField()
+class Chia(models.Model):
+    'Generated Model'
+    age = models.BigIntegerField()
